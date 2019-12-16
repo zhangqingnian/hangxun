@@ -68,15 +68,23 @@ let router = new Router({
       },
       component: () => import('@/components/OrderDetail')
     },
-    //
-    // {
-    //   path: '/redflag',
-    //   name: 'redflag',
-    //   meta:{
-    //     title:'红旗手'
-    //   },
-    //   component: () => import('@/components/Redflag')
-    // },
+    
+    {
+      path: '/redflag',
+      name: 'redflag',
+      meta:{
+        title:'红旗手'
+      },
+      component: () => import('@/components/Redflag')
+    },
+    {
+      path: '/toRed',
+      name: 'toRed',
+      meta: {
+        title: '生成邀请码' //生成成为红旗手邀请码
+      },
+      component: () => import('@/components/ToRed')
+    },
   ]
 })
 // router.beforeEach(function(to, from, next){

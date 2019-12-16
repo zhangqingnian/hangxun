@@ -49,12 +49,12 @@ export default {
       this.$http.post('/wx/getSubmitToken')
       //获取公钥
       this.getKey()
-      var code = getUrlParam("code");
-      if (!code) {
-        var addr ='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa0355ce7acde0af0&redirect_uri=http%3A%2F%2Fwww.admin.hangxun.net%2Fdist%2Fwx_index.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-        window.location.href = addr;
-      }
-      localStorage.setItem('code',code)
+      // var code = getUrlParam("code");
+      // if (!code) {
+      //   var addr ='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa0355ce7acde0af0&redirect_uri=http%3A%2F%2Fwww.admin.hangxun.net%2Fdist%2Fwx_index.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
+      //   window.location.href = addr;
+      // }
+      // localStorage.setItem('code',code)
   },
   computed: {
         scrollHeight () {
@@ -79,7 +79,7 @@ export default {
       let code = localStorage.getItem('code') || '';
       //密码加密
       userPwd = this.addCode(this.key,userPwd);
-      this.$http.post('/wx/wxLogin',{ 
+      this.$http.post('/wx/wxLogin_123',{ 
         userName,
         userPwd ,
         code
